@@ -1,0 +1,23 @@
+"""Shared limits and JSON payload type tags for QR file transfer."""
+
+MAX_FILE_BYTES = 100 * 1024 * 1024
+
+CHUNK_HEX_CHARS_DEFAULT = 500
+CHUNK_HEX_CHARS_MIN = 64
+CHUNK_HEX_CHARS_MAX = 4296
+
+DWELL_SECONDS_DEFAULT = 2.0
+DWELL_SECONDS_MIN = 0.2
+DWELL_SECONDS_MAX = 5.0
+
+METADATA_TYPE = "file_metadata"
+CHUNK_TYPE = "data_chunk"
+MISSING_RANGES_TYPE = "missing_ranges"
+
+MAX_MISSING_RANGE_ENTRIES = 100
+# Bidirectional: refresh missing_ranges control QR after this many duplicate decodes
+# of distinct chunk orders in a row (repeated decodes of the same order count once).
+CONTROL_METADATA_CONSECUTIVE_REPEATS = 3
+
+PROGRESS_CACHE_VERSION = 1
+PROGRESS_CACHE_INTERVAL_DEFAULT = 60.0
